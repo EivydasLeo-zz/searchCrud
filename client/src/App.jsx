@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import SearchBar from './components/pages/SearchBar';
+import SearchBar from './components/SearchBar';
 import { Switch, Route } from 'react-router';
 import Article from './components/pages/ArticleList';
 

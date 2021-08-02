@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+
+.font {
+  font-family: 'Zen Tokyo Zoo', cursive;
+  font-size: 4rem;
+}
+/* Fonts end section */
+
+.header {
+  padding: 5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.a-form:hover {
+  text-decoration: underline;
+}
+
+.font {
+  line-height: 0.8;
+}

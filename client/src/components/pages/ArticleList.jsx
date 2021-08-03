@@ -9,8 +9,9 @@ class Article extends Component {
     };
   }
 
-  async getAllArticles() {
+  async getAllArticles(value) {
     const articles = await getArticles();
+    // await saveSearch(value);
     console.log(articles);
     this.setState({ data: articles.articles });
   }
@@ -28,7 +29,7 @@ class Article extends Component {
         <div className="row justify-content-between">
           {this.state.data.map((obj, index) => (
             <div key={index} className="col-sm-12 col-md-6 col-lg-4 w-80 card one-article">
-              <img className="card-img-top" alt="..." src={obj.image} />
+              <img className="card-img-top" alt="..." src={obj.urlToImage} />
               <div className="card-body">
                 <h5 className="card-title">{obj.title}</h5>
                 <p className="card-text">{obj.description}</p>

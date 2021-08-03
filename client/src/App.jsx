@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import { Switch, Route } from 'react-router';
 import Article from './components/pages/ArticleList';
+import SearchHistory from './components/pages/SearchHistory';
 
 class App extends Component {
   state = {};
@@ -13,6 +14,7 @@ class App extends Component {
         <div className="main-container">
           <Switch>
             <Route path="/article_list" component={Article}></Route>
+            <Route path="/search_history" component={SearchHistory}></Route>
           </Switch>
         </div>
       </div>

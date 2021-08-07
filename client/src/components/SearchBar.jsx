@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { newSearch } from '../service/fetchData';
+
 class SearchBar extends Component {
   state = {
     title: '',
@@ -16,10 +17,12 @@ class SearchBar extends Component {
     const objToSend = {
       title: this.state.title,
     };
+
     newSearch(objToSend);
+
     // const history = this.props.history;
-    // history.push('/search_history');
-    console.log('I will send this ', objToSend);
+    // history.push('/article_list');
+    // console.log('I will send this ', objToSend);
   };
 
   render() {

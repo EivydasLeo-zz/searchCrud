@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const ApiUrl =
-  'https://newsapi.org/v2/everything?q=apple&sortBy=popularity&pageSize=9&apiKey=e1e42df6828e414da5dad854ea26b135';
+  'https://newsapi.org/v2/top-headlines?sources=bbc-news&pageSize=9&apiKey=e1e42df6828e414da5dad854ea26b135';
 
 const mongooDb = 'http://localhost:4000/search_history';
 
@@ -17,9 +17,11 @@ const reqOptions = {
   referrerPolicy: 'no-referrer',
 };
 
-export const getArticles = async () => {
+export const getArticles = async (searchingFor) => {
   try {
-    const articlesResult = await axios.get(ApiUrl);
+    const articlesResult = await axios.get(
+      `https://newsapi.org/v2/top-headlines?q=${searchingFor}&pageSize=9&apiKey=e1e42df6828e414da5dad854ea26b135`
+    );
     return articlesResult.data;
   } catch (err) {
     console.log(err);

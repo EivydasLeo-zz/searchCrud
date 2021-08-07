@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getArticles } from '../../service/fetchData';
+import { getArticles, newSearch } from '../../service/fetchData';
 
 class Article extends Component {
   constructor(props) {
@@ -10,14 +10,15 @@ class Article extends Component {
   }
 
   async getAllArticles(value) {
-    const articles = await getArticles();
-    // await saveSearch(value);
+    const articles = await getArticles(value);
     console.log(articles);
     this.setState({ data: articles.articles });
   }
 
   componentDidMount() {
-    this.getAllArticles();
+    const value = 'covid';
+    // is url gauti value
+    this.getAllArticles(value);
   }
 
   render() {

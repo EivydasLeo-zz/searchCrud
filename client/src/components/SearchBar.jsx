@@ -17,12 +17,6 @@ class SearchBar extends Component {
     event.preventDefault();
     const searchValue = this.state.title;
 
-    console.log(searchValue);
-    const objToSend = {
-      title: searchValue,
-    };
-
-    newSearch(objToSend);
     console.log(this.props);
     this.props.history.push(`/article_list/${searchValue}`);
   };

@@ -17,7 +17,12 @@ class Article extends Component {
   componentDidMount() {
     const value = this.props.match.params.search ?? 'covid';
     console.log(this.props);
+    console.log(value);
+    const objToSend = {
+      title: value,
+    };
 
+    newSearch(objToSend);
     this.getAllArticles(value);
   }
 

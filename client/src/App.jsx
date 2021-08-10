@@ -13,7 +13,7 @@ class App extends Component {
         <SearchBar />
         <div className="main-container">
           <Switch>
-            <Route path="/article_list" component={Article}></Route>
+            <Route path="/article_list/:search" component={Article}></Route>
             <Route path="/search_history" component={SearchHistory}></Route>
           </Switch>
         </div>

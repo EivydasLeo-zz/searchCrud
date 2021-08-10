@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-const ApiUrl =
-  'https://newsapi.org/v2/top-headlines?sources=bbc-news&pageSize=9&apiKey=e1e42df6828e414da5dad854ea26b135';
-
 const mongooDb = 'http://localhost:4000/search_history';
 
 const reqOptions = {

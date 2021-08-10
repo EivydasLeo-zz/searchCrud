@@ -11,13 +11,13 @@ class Article extends Component {
 
   async getAllArticles(value) {
     const articles = await getArticles(value);
-    console.log(articles);
     this.setState({ data: articles.articles });
   }
 
   componentDidMount() {
-    const value = 'covid';
-    // is url gauti value
+    const value = this.props.match.params.search ?? 'covid';
+    console.log(this.props);
+
     this.getAllArticles(value);
   }
 

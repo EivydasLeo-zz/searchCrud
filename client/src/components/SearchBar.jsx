@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { newSearch } from '../service/fetchData';
+import { withRouter } from 'react-router';
 
 class SearchBar extends Component {
   state = {
@@ -14,15 +15,16 @@ class SearchBar extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    const searchValue = this.state.title;
+
+    console.log(searchValue);
     const objToSend = {
-      title: this.state.title,
+      title: searchValue,
     };
 
     newSearch(objToSend);
-
-    // const history = this.props.history;
-    // history.push('/article_list');
-    // console.log('I will send this ', objToSend);
+    console.log(this.props);
+    this.props.history.push(`/article_list/${searchValue}`);
   };
 
   render() {
@@ -57,4 +59,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
